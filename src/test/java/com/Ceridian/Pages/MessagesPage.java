@@ -26,6 +26,7 @@ public class MessagesPage extends BasePage<MessagesPage> {
     public void acceptFirstRequest() {
         driver.switchTo().frame("ContainerFrame");
         driver.switchTo().frame("frameMessageDetails");
+        helper.sleep();
         wait.until(ExpectedConditions.visibilityOf(firstRequest));
         helper.sleep();
         firstRequest.click();

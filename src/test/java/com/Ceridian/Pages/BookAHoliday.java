@@ -1,5 +1,6 @@
 package com.Ceridian.Pages;
 
+import com.Ceridian.com.Helper;
 import com.frameworkium.core.ui.pages.BasePage;
 import com.frameworkium.core.ui.pages.PageFactory;
 import org.openqa.selenium.Alert;
@@ -30,19 +31,17 @@ public class BookAHoliday extends BasePage<BookAHoliday> {
     @FindBy(id = "LogoutIcon")
     WebElement logoutIcon;
 
+    Helper helper = new Helper();
 
     public HomePage clickHR() {
         driver.switchTo().defaultContent();
-        driver.switchTo().frame("ContainerFrame");
-        driver.switchTo().frame("iframeCommunityContainer");
+        helper.switchToFrontPageFrame();
         HRTab.click();
         return PageFactory.newInstance(HomePage.class);
     }
 
     public HomePage completeHolidayFormAndSubmit(String firstDate, String lastDate) {
-        driver.switchTo().frame("ContainerFrame");
-        driver.switchTo().frame("iframeCommunityContainer");
-        driver.switchTo().frame("FORMCONTAINER");
+        helper.switchToMainFrame();
         firstDayOfLeaveInput.sendKeys(firstDate);
         lastDayofLeaveInput.sendKeys(lastDate);
 

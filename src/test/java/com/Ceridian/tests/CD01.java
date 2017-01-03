@@ -22,7 +22,7 @@ public class CD01 extends BaseTest {
 
     HomePage homePage = new HomePage();
     homePage.openPage(excelArray[2])
-            .logIn("1000484", "P@55word!");
+            .logIn(excelArray[0], excelArray[1]);
     String firstName = helper.generateRandomName(5);
     String lastName = helper.generateRandomName(5);
     String middleName = helper.generateRandomName(5);

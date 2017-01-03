@@ -22,7 +22,7 @@ public class HB01 extends BaseTest {
 
 //                .logIn("fulladmin", "Brexit?1$")
                 .openPage(excelArray[2])
-                .logIn("1000483", "password9!");
+                .logIn(excelArray[0], excelArray[1]);
 
         Navigation navigation = PageFactory.newInstance(Navigation.class);
         navigation.
@@ -45,7 +45,7 @@ public class HB01 extends BaseTest {
 
         homePage
                 .openPage(excelArray[2])
-                .logIn("1000483", "password9!")
+                .logIn(excelArray[0], excelArray[1])
                 .clickMessages()
                 .acceptFirstRequest();
 

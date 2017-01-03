@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
@@ -29,13 +28,13 @@ public class ExcelUtils {
     public String[] readLoginInformation() {
         String ex[] = new String[100];
         try {
-            File file = new File("C:/Users/saahme/Documents/filepath.xls");
+            File file = new File("C:/filepath.xls");
 //            FileInputStream fileInputStream = new FileInputStream("C:/Users/saahme/Documents/filepath.xls");
             Workbook workbook = WorkbookFactory.create(file);
             Sheet worksheet = workbook.getSheetAt(0);
             Row row1 = worksheet.getRow(1);
             Cell cellA3 = row1.getCell(0);
-            ex[0] = new BigDecimal(cellA3.getNumericCellValue()).toPlainString();
+            ex[0] = new String (cellA3.getStringCellValue());
 
 
             DataFormatter formatter = new DataFormatter();
