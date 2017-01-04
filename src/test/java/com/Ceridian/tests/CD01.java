@@ -8,9 +8,7 @@ import com.frameworkium.core.ui.pages.PageFactory;
 import com.frameworkium.core.ui.tests.BaseTest;
 import org.testng.annotations.Test;
 
-/**
- * Created by Saahme on 19/07/2016.
- */
+
 public class CD01 extends BaseTest {
 
 @Test(description = "Change user details")
@@ -20,7 +18,7 @@ public class CD01 extends BaseTest {
     ExcelUtils excelUtils = new ExcelUtils();
     String[] excelArray = excelUtils.readLoginInformation();
 
-//    HomePage homePage = new HomePage();
+    HomePage homePage = new HomePage();
     homePage.openPage(excelArray[2])
             .logIn(excelArray[0], excelArray[1]);
     String firstName = helper.generateRandomName(5);
