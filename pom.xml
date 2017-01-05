@@ -90,6 +90,14 @@
     </build>
 
 
+    <testSourceDirectory>src/test/java</testSourceDirectory>
+    <resources>
+        <resource>
+            <directory>
+                src/main/resources
+            </directory>
+        </resource>
+    </resources>
 
   <profiles>
     <profile>
@@ -98,6 +106,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <build>
+
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -141,13 +150,7 @@
             </configuration>
           </plugin>
         </plugins>
-          <resources>
-              <resource>
-                  <directory>
-                      src/test/java/com/Ceridian/tests
-                  </directory>
-              </resource>
-          </resources>
+
       </build>
     </profile>
   </profiles>
