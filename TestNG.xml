@@ -5,7 +5,7 @@
 
     <test name ="exampleTest1">
     <classes>
-        <class name="com.Ceridian.CD01" />
+        <class name="com.Ceridian.tests.HB01" />
     </classes>
     </test>
 </suite>
