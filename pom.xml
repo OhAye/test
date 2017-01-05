@@ -123,10 +123,16 @@
                   /browse/%s
                 </allure.issues.tracker.pattern>
               </systemProperties>
-              <includes>
-                <include>**/*Test.java</include>
+                <suiteXmlFiles>
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+                <includes>
+                <include>**/Test*.java</include>
+                <include>**/*Tests*.java</include>
                 <include>**/*Tests.java</include>
-              </includes>
+                <include>**/*Test.java</include>
+                <include>**/*TestCase.java</include>
+                </includes>
               <groups>${groups}</groups>
               <testFailureIgnore>false</testFailureIgnore>
               <argLine>
