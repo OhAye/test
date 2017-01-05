@@ -47,6 +47,12 @@
   </repositories>
 
   <dependencies>
+      <dependency>
+          <groupId>org.testng</groupId>
+          <artifactId>testng</artifactId>
+          <version>6.9.8</version>
+          <scope>test</scope>
+      </dependency>
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
@@ -79,10 +85,12 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
+        <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+      <systemPropertyVariables>
+          <propertyName>chrome</propertyName>
+      </systemPropertyVariables>
         </configuration>
       </plugin>
     </plugins>
