@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class CD01 extends BaseTest {
 
-@Test(description = "Change user details")
+@Test(description = "Change user detail")
     public void CD05() {
 
     Helper helper = PageFactory.newInstance(Helper.class);
