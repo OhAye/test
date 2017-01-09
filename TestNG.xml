@@ -4,6 +4,7 @@
 <suite name="start">
 
     <test name ="exampleTest1">
+        <parameter name="browser" value="chrome"/>
     <classes>
         <class name="com.Ceridian.tests.HB01" />
     </classes>
