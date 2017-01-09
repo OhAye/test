@@ -6,6 +6,7 @@ import com.Ceridian.Pages.Navigation;
 import com.Ceridian.com.ExcelUtils;
 import com.frameworkium.core.ui.pages.PageFactory;
 import com.frameworkium.core.ui.tests.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
@@ -14,6 +15,7 @@ import org.testng.annotations.Test;
 public class HB01 extends BaseTest {
 
     @Test(description = "Submit Holiday booking")
+    @Parameters({"browser"})
     public void CD01() {
         HomePage homePage = new HomePage();
         ExcelUtils excelUtils = new ExcelUtils();
