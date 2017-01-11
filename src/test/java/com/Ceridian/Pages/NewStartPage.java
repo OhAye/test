@@ -16,7 +16,6 @@ import java.util.Random;
 public class NewStartPage extends BasePage<NewStartPage> {
 
 
-
     @FindBy(id = "CurrentNewHiresGrid_ImgInsert")
     private WebElement draftAddButton;
 
@@ -47,11 +46,10 @@ public class NewStartPage extends BasePage<NewStartPage> {
     private WebElement payrollCompanyInput;
 
 
-
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement firstPayrollCompany;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement payrollCompanySelectButton;
 
     @FindBy(id = "NINUMBER1_txtInput")
@@ -72,7 +70,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td")
     private WebElement maritalStatusDivorced;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement maritalStatusSelectButton;
 
     @FindBy(id = "LASTNAME1_txtInput")
@@ -82,12 +80,12 @@ public class NewStartPage extends BasePage<NewStartPage> {
     private WebElement nationalitySelect;
 
     @FindBy(css = "#GENDER1.WebControl.ctLookup.ControlViewportDESKTOP > img")
-    private  WebElement genderInput;
+    private WebElement genderInput;
 
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td[@class='GridRow']")
     private WebElement genderMale;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement genderSelect;
 
     @FindBy(id = "ADDRESS1_txtInput")
@@ -263,20 +261,22 @@ public class NewStartPage extends BasePage<NewStartPage> {
 
     public NewStartPage completePersonalAddressDetails(String firstName, String lastName, String startDate, String NINumber,
                                                        String DOB,
-                                                        String addressLine, String postcode) {
+                                                       String addressLine, String postcode) {
 
         helper.switchToMainFrame();
         startDateInput.sendKeys(startDate);
 
         wait.until(ExpectedConditions.visibilityOf(payrollCompanyLookUp));
         payrollCompanyLookUp.click();
+        helper.switchToLookUpFrame();
+        wait.until(ExpectedConditions.visibilityOf(perfTestingCompanySelect));
         perfTestingCompanySelect.click();
-
 
 
         helper.switchToLookUpFrame();
         firstPayrollCompany.click();
         helper.switchToMainFrame();
+        wait.until(ExpectedConditions.visibilityOf(payrollCompanySelectButton));
         payrollCompanySelectButton.click();
 
         niNumberInput.clear();
@@ -380,8 +380,6 @@ public class NewStartPage extends BasePage<NewStartPage> {
         companyWorkPatternPT1.click();
         helper.switchToMainFrame();
         companyWorkPatternSelectButton.click();
-
-
 
 
         wait.until(ExpectedConditions.visibilityOf(salaryDetailsLink));

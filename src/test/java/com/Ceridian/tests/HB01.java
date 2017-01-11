@@ -32,7 +32,7 @@ public class HB01 extends BaseTest {
 
         BookAHoliday bookAHoliday = PageFactory.newInstance(BookAHoliday.class);
         bookAHoliday
-                .completeHolidayFormAndSubmit("12/05/2016", "15/05/2016");
+                .completeHolidayFormAndSubmit("12/05/2017", "15/05/2017");
 
 
     }
