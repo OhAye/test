@@ -6,7 +6,6 @@
     <test name ="exampleTest1">
         <parameter name="browser" value="chrome"/>
     <classes>
-        <class name="com.Ceridian.tests.HB01" />
         <class name="com.Ceridian.tests.NH01"/>
     </classes>
     </test>
