@@ -37,7 +37,7 @@ public class HB01 extends BaseTest {
 
     }
 
-    @Test(dependsOnMethods = "CD01", alwaysRun = true, description = "Accept Holiday Booking")
+    //@Test(dependsOnMethods = "CD01", alwaysRun = true, description = "Accept Holiday Booking")
 
     public void CD02() {
 
