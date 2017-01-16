@@ -3,10 +3,14 @@ package com.Ceridian.Pages;
 import com.Ceridian.com.Helper;
 import com.frameworkium.core.ui.pages.BasePage;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Keyboard;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import sun.security.util.KeyUtil;
 
 import java.util.Random;
 
@@ -15,6 +19,8 @@ import java.util.Random;
  */
 public class NewStartPage extends BasePage<NewStartPage> {
 
+    @FindBy(id = "BackButton")
+    private WebElement backButton;
 
     @FindBy(id = "CurrentNewHiresGrid_ImgInsert")
     private WebElement draftAddButton;
@@ -99,7 +105,6 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(css = "#TabbedFolder1Page1 > div > a")
     private WebElement contractDetailsLink;
 
-
     @FindBy(id = "DropDownList6_cboInput")
     private WebElement employmentTypeSelect;
 
@@ -112,7 +117,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[@class='GridRow']")
     private WebElement jobTitleAccAdmin;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement jobTitleSelectButton;
 
     @FindBy(css = "#REPORTSTO1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -127,7 +132,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement firstManager;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement lineManagerSelect;
 
     @FindBy(css = "#HOLIDAYMONITOR1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -142,7 +147,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement absenceApproverFirstApprover;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span")
     private WebElement absenceApproverSelectButton;
 
     @FindBy(css = "#BUSINESSAREA1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -151,7 +156,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td")
     private WebElement orgLevelHeadOffice;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement orgLevelSelectButton;
 
     @FindBy(css = "#LOCATION1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -160,7 +165,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement locationContingencySite;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement locationSelectButton;
 
     @FindBy(id = "HOLIDAYYEARSTART1_txtInput")
@@ -172,7 +177,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement holidayFullTimeDays;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement holidayEntitlementSelectButton;
 
     @FindBy(css = "#WORKPATTERN1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -181,7 +186,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td")
     private WebElement companyWorkPatternPT1;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement companyWorkPatternSelectButton;
 
     //Salary, Bank & Payroll Details
@@ -212,7 +217,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement paygroupActiveLegacy;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement paygroupSelectButton;
 
     @FindBy(css = "#PAYDEPARTMENT1.WebControl.ctLookup.ControlViewportDESKTOP > img")
@@ -225,7 +230,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     private WebElement payDepartmentSecurity;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement payDepartmentSelectButton;
 
     // New Starter Completion
@@ -235,7 +240,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(id = "SUBMITFORM1_chkInput")
     private WebElement newStarterCheckbox;
 
-    @FindBy(id = "StandardFooterToolbar_StandardFooterToolbarSaveClose")
+    @FindBy(id = "StandardFooterToolbar_StandardFooterToolbarSave")
     private WebElement saveAndCloseButton;
 
     @FindBy(xpath = "/html/body/form/div[4]/div[2]/div[1]/div/div/div/div[2]/div[2]/div/div/div/div/table/tbody/tr[1]/td[2]")
@@ -338,16 +343,20 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(firstNameManagerInput));
         firstNameManagerInput.sendKeys("a");
         valueSearchButton.click();
+
         wait.until(ExpectedConditions.visibilityOf(firstManager));
         firstManager.click();
         helper.switchToMainFrame();
         lineManagerSelect.click();
+
         wait.until(ExpectedConditions.visibilityOf(absenceApproverLookUp));
         absenceApproverLookUp.click();
         helper.switchToLookUpFrame();
+
         wait.until(ExpectedConditions.visibilityOf(absenceApproverInput));
         absenceApproverInput.sendKeys("a");
         absenceApproverInputSearch.click();
+
         wait.until(ExpectedConditions.visibilityOf(absenceApproverFirstApprover));
         absenceApproverFirstApprover.click();
         helper.switchToMainFrame();
@@ -382,6 +391,40 @@ public class NewStartPage extends BasePage<NewStartPage> {
         companyWorkPatternSelectButton.click();
 
 
+
+        return this;
+
+    }
+
+    public NewStartPage completeNewStarter() {
+        helper.switchToMainFrame();
+        wait.until(ExpectedConditions.visibilityOf(newStarterLink));
+        newStarterLink.click();
+        newStarterCheckbox.click();
+        wait.until(ExpectedConditions.visibilityOf(saveAndCloseButton));
+        saveAndCloseButton.click();
+        driver.switchTo().defaultContent();
+        backButton.click();
+        backButton.click();
+
+        return this;
+
+    }
+
+    public NewStartPage assertNewStarterComplete(String firstName, String lastName) {
+
+        helper.switchToMainFrame();
+        wait.until(ExpectedConditions.visibilityOf(newStartersLink));
+        newStartersLink.click();
+        helper.switchToMainFrame();
+        wait.until(ExpectedConditions.visibilityOf(verifyFirstName));
+        Assert.assertTrue("Verification failed" + firstName, verifyFirstName.getText().equals(firstName));
+
+        return this;
+    }
+
+    public NewStartPage completeSalaryDetails(String annualSalary, String hoursPerWeek) {
+        helper.switchToMainFrame();
         wait.until(ExpectedConditions.visibilityOf(salaryDetailsLink));
         salaryDetailsLink.click();
 
@@ -416,28 +459,4 @@ public class NewStartPage extends BasePage<NewStartPage> {
         return this;
 
     }
-
-    public NewStartPage completeNewStarter() {
-        wait.until(ExpectedConditions.visibilityOf(newStarterLink));
-        newStarterLink.click();
-        newStarterCheckbox.click();
-        wait.until(ExpectedConditions.visibilityOf(saveAndCloseButton));
-        saveAndCloseButton.click();
-
-        return this;
-
-    }
-
-    public NewStartPage assertNewStarterComplete(String firstName, String lastName) {
-        helper.switchToMainFrame();
-        wait.until(ExpectedConditions.visibilityOf(newStartersLink));
-        newStartersLink.click();
-        helper.switchToMainFrame();
-        wait.until(ExpectedConditions.visibilityOf(verifyFirstName));
-        Assert.assertTrue("Verification failed" + firstName, verifyFirstName.getText().equals(firstName));
-
-        return this;
-    }
-
-
 }

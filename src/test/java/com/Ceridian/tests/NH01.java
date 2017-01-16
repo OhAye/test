@@ -1,8 +1,6 @@
 package com.Ceridian.tests;
 
-import com.Ceridian.Pages.HomePage;
-import com.Ceridian.Pages.MessagesPage;
-import com.Ceridian.Pages.Navigation;
+import com.Ceridian.Pages.*;
 import com.Ceridian.com.ExcelUtils;
 import com.Ceridian.com.Helper;
 import com.frameworkium.core.ui.pages.PageFactory;
@@ -35,14 +33,20 @@ public class NH01 extends BaseTest {
                 .addNewStarter()
                 .completePersonalAddressDetails(firstName, lastName, "04/06/2017", "NONE",
                         "04/05/1985", "123 boombastic avenue", "G412LQ")
-//                .completeContractJobDetails("06/09/2016")
-//                .completeSalaryDetails("80000", "35")
-                .completeNewStarter()
+                .completeContractJobDetails("06/09/2017","01/01/2017", "30000","40")
+                .completeSalaryDetails("80,000", "40")
+                .completeNewStarter();
+
+        MyHRPage myHRPage = PageFactory.newInstance(MyHRPage.class);
+        myHRPage.clickNewStarter();
+
+        NewStartPage newStartPage = PageFactory.newInstance(NewStartPage.class);
+        newStartPage
                 .assertNewStarterComplete(firstName, lastName);
-        HomePage homePage1 = PageFactory.newInstance(HomePage.class);
-        homePage1.clickMessages();
-        MessagesPage messagesPage = PageFactory.newInstance(MessagesPage.class);
-        messagesPage.acceptFirstRequest();
+//        HomePage homePage1 = PageFactory.newInstance(HomePage.class);
+//        homePage1.clickMessages();
+//        MessagesPage messagesPage = PageFactory.newInstance(MessagesPage.class);
+//        messagesPage.acceptFirstRequest();
 
 
     }
