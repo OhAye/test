@@ -29,7 +29,8 @@ public class CD01 extends BaseTest {
     String middleName = helper.generateRandomName(5);
     Navigation navigation = PageFactory.newInstance(Navigation.class);
     navigation.clickMyDetailsImage()
-            .updatePersonalDetails("Mrs", firstName, lastName,middleName);
+            .updatePersonalDetails("Mrs", firstName, lastName,middleName,"17/01/2017","17/01/2017","123 Sonas","Braehead",
+                                    "Renfrew","Glasgow","G41 2WE","0141852369","sdworx@sdworx.com","07894852369");
 
 
 }

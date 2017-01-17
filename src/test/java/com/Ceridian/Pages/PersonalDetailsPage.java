@@ -2,11 +2,16 @@ package com.Ceridian.Pages;
 
 import com.Ceridian.com.Helper;
 import com.frameworkium.core.ui.pages.BasePage;
+import org.apache.commons.lang.time.DateUtils;
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import java.util.Date;
+import java.util.Random;
 
 /**
  * Created by Saahme on 19/07/2016.
@@ -35,16 +40,16 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
     @FindBy(id = "PREFERREDNAME1_txtInput")
     private WebElement preferredNameInput;
 
-    @FindBy(css = "#MARITALSTATUS1.WebControl.ctLookup.ControlViewportALL > img")
+    @FindBy(css = "#MARITALSTATUS1.WebControl.ctLookup.ControlViewport > img")
     private WebElement maritalStatusImage;
 
-    @FindBy(id = "MARITALSTATUS1_txtInput")
+    @FindBy(id = "#MARITALSTATUS1_txtInput.ui-autocomplete > input")
     private WebElement maritalStatusText;
 
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td")
     private WebElement maritalStatusDivorced;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     private WebElement maritalStatusSelectButton;
 
     @FindBy(id = "DropDownList2_cboInput")
@@ -56,12 +61,17 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
     @FindBy(id = "DropDownList10_cboInput")
     private WebElement religionSelect;
 
-    @FindBy(id = "#TabbedFolder1Page1.TabNormal > div > a")
+    @FindBy(css = "#TabbedFolder1Page1.TabNormal > div > a")
     private WebElement contactDetailsLink;
 
 
-    @FindBy(id = "DateInput3_txtInput")
+    @FindBy(id = "DateInput1_txtInput")
     private WebElement dateFromInput;
+
+    @FindBy(id = "DateInput3_txtInput")
+    private WebElement dateFromInput2;
+
+
 
     @FindBy(id = "ADDRESS11_txtInput")
     private WebElement addressline1Input;
@@ -75,7 +85,7 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
     @FindBy(id = "CITY1_txtInput")
     private WebElement cityInput;
 
-    @FindBy(id = "COUNTY1_txtInput")
+    @FindBy(id = "DropDownList4_cboInput")
     private WebElement countryInput;
 
     @FindBy(id = "POSTCODE1_txtInput")
@@ -90,7 +100,7 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
     @FindBy(id = "HOMETELEPHONE1_txtInput")
     private WebElement mobileInput;
 
-    @FindBy(id = "EmailDisplayBox_txtInput")
+    @FindBy(id = "EmailEdit1_txtInput")
     private WebElement emailInput;
 
     @FindBy(css = "#TabbedFolder1Page2.TabHL.TabSelected > div > a")
@@ -193,10 +203,17 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
     @FindBy(id = "BUILDINGSOCIETYREFERENCE1_txtInput")
     private WebElement buildingSocietyRefInput;
 
-    public void updatePersonalDetails(String title, String firstName, String lastName, String middleName) {
+    @FindBy(id = "StandardFooterToolbar_StandardFooterToolbarSubmit")
+    private WebElement submitButton;
+    public void updatePersonalDetails(String title, String firstName, String lastName, String middleName, String dataInput1,
+                                      String datainput2, String addressline1, String addressline2, String addressline3, String city,
+                                      String postcode, String telephone, String email, String mobile) {
+
+       Random random = new Random();
 
         Helper helper = new Helper();
         helper.switchToMainFrame();
+        dateFromInput.sendKeys(dataInput1);
         wait.until(ExpectedConditions.visibilityOf(titleSelect));
         Select selectTitle = new Select(titleSelect);
         selectTitle.selectByValue(title);
@@ -207,12 +224,41 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
         lastNameInput.clear();
         lastNameInput.sendKeys(lastName);
 
+        helper.switchToMainFrame();
+
         maritalStatusImage.click();
         helper.switchToLookUpFrame();
         maritalStatusDivorced.click();
         helper.switchToMainFrame();
         maritalStatusSelectButton.click();
-        Assert.assertTrue(maritalStatusText.getText().equals("Divorced"));
+
+        helper.switchToMainFrame();
+
+        Select natSel = new Select(nationalitySelect);
+        natSel.selectByIndex(new Random().nextInt(natSel.getOptions().size()-1));
+
+        Select ethSel = new Select(ethnicitySelect);
+        ethSel.selectByIndex(new Random().nextInt(ethSel.getOptions().size()-1));
+
+        Select relSel = new Select(religionSelect);
+        relSel.selectByIndex(new Random().nextInt(relSel.getOptions().size()-1));
+
+        contactDetailsLink.click();
+        dateFromInput2.sendKeys(datainput2);
+        addressline1Input.sendKeys(addressline1);
+        addressline2Input.sendKeys(addressline2);
+        addressline3Input.sendKeys(addressline3);
+        cityInput.sendKeys(city);
+        postcodeInput.sendKeys(postcode);
+
+        Select countrySelect = new Select(countryInput);
+        countrySelect.selectByIndex(new Random().nextInt(countrySelect.getOptions().size())-1);
+
+        telephoneInput.sendKeys(telephone);
+        mobileInput.sendKeys(mobile);
+        emailInput.sendKeys(email);
+
+        submitButton.click();
 
 
 

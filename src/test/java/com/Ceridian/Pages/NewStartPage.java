@@ -429,15 +429,15 @@ public class NewStartPage extends BasePage<NewStartPage> {
         salaryDetailsLink.click();
 
         Select payFreq = new Select(payFrequencySelect);
-        payFreq.selectByIndex(new Random(-1).nextInt(payFreq.getOptions().size()));
+        payFreq.selectByIndex(new Random().nextInt(payFreq.getOptions().size()-1));
 
         Select payType = new Select(payTypeSelect);
-        payType.selectByIndex(new Random(-1).nextInt(payType.getOptions().size()));
+        payType.selectByIndex(new Random().nextInt(payType.getOptions().size()-1));
 
         annualSalaryInput.sendKeys(annualSalary);
 
         Select MOP = new Select(methodOfPaymentSelect);
-        MOP.selectByIndex(new Random(-1).nextInt(MOP.getOptions().size()));
+        MOP.selectByIndex(new Random().nextInt(MOP.getOptions().size()-1));
 
         hoursPerWeekInput.sendKeys(hoursPerWeek);
 
