@@ -38,7 +38,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
     private WebElement submittedNewStarter;
 
     @FindBy(id = "CurrentPage2")
-    private WebElement completedNewStarter;
+    private WebElement completedNewStarter2;
 
     // Personal Address Details
 
@@ -250,6 +250,12 @@ public class NewStartPage extends BasePage<NewStartPage> {
     @FindBy(css = "#CurrentPage1 > div > a")
     private WebElement newStartersLink;
 
+    @FindBy(css = "#CurrentPage2 > div a")
+    private WebElement completedNewStarter;
+
+    @FindBy(xpath = "/html/body/form/div[4]/div[2]/div[1]/div/div/div/div[2]/div[3]/div/div/div/div/table/tbody/tr[1]/td[2]")
+    private WebElement verfiryFirstNameNewStarter;
+
 
     Helper helper = new Helper();
 
@@ -417,10 +423,10 @@ public class NewStartPage extends BasePage<NewStartPage> {
 
         helper.switchToMainFrame();
         wait.until(ExpectedConditions.visibilityOf(newStartersLink));
-        newStartersLink.click();
+        completedNewStarter.click();
         helper.switchToMainFrame();
-        wait.until(ExpectedConditions.visibilityOf(verifyFirstName));
-        Assert.assertTrue("Verification failed" + firstName, verifyFirstName.getText().equals(firstName));
+        wait.until(ExpectedConditions.visibilityOf(verfiryFirstNameNewStarter));
+        Assert.assertTrue("Verification failed" + firstName, verfiryFirstNameNewStarter.getText().equals(firstName));
 
         return this;
     }

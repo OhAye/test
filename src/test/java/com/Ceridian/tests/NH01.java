@@ -40,9 +40,9 @@ public class NH01 extends BaseTest {
         MyHRPage myHRPage = PageFactory.newInstance(MyHRPage.class);
         myHRPage.clickNewStarter();
 
-//        NewStartPage newStartPage = PageFactory.newInstance(NewStartPage.class);
-//        newStartPage
-//                .assertNewStarterComplete(firstName, lastName);
+        NewStartPage newStartPage = PageFactory.newInstance(NewStartPage.class);
+        newStartPage
+                .assertNewStarterComplete(firstName, lastName);
 //        HomePage homePage1 = PageFactory.newInstance(HomePage.class);
 //        homePage1.clickMessages();
 //        MessagesPage messagesPage = PageFactory.newInstance(MessagesPage.class);
