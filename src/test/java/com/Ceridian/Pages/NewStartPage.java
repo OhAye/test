@@ -428,9 +428,11 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(salaryDetailsLink));
         salaryDetailsLink.click();
 
+        wait.until(ExpectedConditions.visibilityOf(payFrequencySelect));
         Select payFreq = new Select(payFrequencySelect);
         payFreq.selectByIndex(new Random().nextInt(payFreq.getOptions().size()-1));
 
+        wait.until(ExpectedConditions.visibilityOf(payTypeSelect));
         Select payType = new Select(payTypeSelect);
         payType.selectByIndex(new Random().nextInt(payType.getOptions().size()-1));
 
