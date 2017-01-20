@@ -51,6 +51,7 @@ public class BookAHoliday extends BasePage<BookAHoliday> {
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         alert.accept();
+        wait.until(ExpectedConditions.visibilityOf(logoutIcon));
         logoutIcon.click();
 
         return PageFactory.newInstance(HomePage.class);
