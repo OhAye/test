@@ -404,7 +404,9 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(saveAndCloseButton));
         saveAndCloseButton.click();
         driver.switchTo().defaultContent();
+        wait.until(ExpectedConditions.visibilityOf(backButton));
         backButton.click();
+        wait.until(ExpectedConditions.visibilityOf(backButton));
         backButton.click();
 
         return this;
