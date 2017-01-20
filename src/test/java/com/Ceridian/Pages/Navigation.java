@@ -71,6 +71,7 @@ public class Navigation extends BasePage<Navigation> {
     public Navigation clickBurgerMenu() {
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.elementToBeClickable(burgerMenu));
+        helper.sleep();
         burgerMenu.click();
         return this;
     }
