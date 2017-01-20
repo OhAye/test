@@ -436,11 +436,14 @@ public class NewStartPage extends BasePage<NewStartPage> {
         payFreq.selectByIndex(new Random().nextInt(payFreq.getOptions().size()-1));
 
         wait.until(ExpectedConditions.visibilityOf(payTypeSelect));
+        helper.sleep();
         Select payType = new Select(payTypeSelect);
         payType.selectByIndex(new Random().nextInt(payType.getOptions().size()-1));
 
         annualSalaryInput.sendKeys(annualSalary);
 
+        wait.until(ExpectedConditions.visibilityOf(methodOfPaymentSelect));
+        helper.sleep();
         Select MOP = new Select(methodOfPaymentSelect);
         MOP.selectByIndex(new Random().nextInt(MOP.getOptions().size()-1));
 
