@@ -439,7 +439,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(payTypeSelect));
         helper.sleep();
         Select payType = new Select(payTypeSelect);
-        payType.selectByValue("Hourly");
+        payType.selectByIndex(1);
 //        payType.selectByIndex(new Random().nextInt(payType.getOptions().size()-2));
 
         annualSalaryInput.sendKeys(annualSalary);
@@ -447,7 +447,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(methodOfPaymentSelect));
         helper.sleep();
         Select MOP = new Select(methodOfPaymentSelect);
-        MOP.selectByValue("Giro");
+        MOP.selectByIndex(1);
 //        MOP.selectByIndex(new Random().nextInt(MOP.getOptions().size()-1));
 
         hoursPerWeekInput.sendKeys(hoursPerWeek);
