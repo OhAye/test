@@ -425,6 +425,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
         wait.until(ExpectedConditions.visibilityOf(newStartersLink));
         completedNewStarter.click();
         helper.switchToMainFrame();
+        helper.sleep();
         wait.until(ExpectedConditions.visibilityOf(verfiryFirstNameNewStarter));
         Assert.assertTrue("Verification failed" + firstName, verfiryFirstNameNewStarter.getText().equals(firstName));
 
