@@ -26,6 +26,7 @@ public class MyHRPage extends BasePage<MyHRPage> {
         driver.switchTo().frame("ContainerFrame");
         driver.switchTo().frame("iframeCommunityContainer");
         wait.until(ExpectedConditions.visibilityOf(newStarterLink));
+        helper.sleep();
         newStarterLink.click();
         driver.switchTo().defaultContent();
         return PageFactory.newInstance(NewStartPage.class);
