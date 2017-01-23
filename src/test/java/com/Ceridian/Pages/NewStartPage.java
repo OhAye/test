@@ -411,6 +411,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
         saveAndCloseButton.click();
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.visibilityOf(backButton));
+        helper.sleep();
         backButton.click();
         wait.until(ExpectedConditions.visibilityOf(backButton));
         backButton.click();

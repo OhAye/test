@@ -235,7 +235,7 @@ public class PersonalDetailsPage extends BasePage<PersonalDetailsPage> {
         helper.switchToMainFrame();
 
         Select natSel = new Select(nationalitySelect);
-        natSel.selectByIndex(new Random().nextInt(natSel.getOptions().size()-1));
+        natSel.selectByIndex(new Random(-1).nextInt(natSel.getOptions().size()));
 
         Select ethSel = new Select(ethnicitySelect);
         ethSel.selectByIndex(new Random().nextInt(ethSel.getOptions().size()-1));
