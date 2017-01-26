@@ -15,7 +15,7 @@ public class MyHRPage extends BasePage<MyHRPage> {
     @FindBy(css = "li:nth-child(1).NoBullet.jms-bullet> h3>a[href^='javascript:ShowSelectedAddInScreen']")
     WebElement newStarterLink;
 
-    @FindBy(css = "li:nth-child(2).NoBullet.jms-bullet> h3>a[href^='javascript:ShowSelectedAddInScreen']")
+    @FindBy(css = "li:nth-child(3).NoBullet.jms-bullet> h3>a[href^='javascript:ShowSelectedAddInScreen']")
     WebElement processLeaverLink;
 
 

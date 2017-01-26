@@ -22,7 +22,7 @@ public class PL01 extends BaseTest {
 
         homePage
                 .openPage(excelArray[2])
-                .logIn("1000483", "password9!");
+                .logIn(excelArray[0], excelArray[1]);
 
         Navigation navigation = PageFactory.newInstance(Navigation.class);
         navigation

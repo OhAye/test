@@ -414,6 +414,7 @@ public class NewStartPage extends BasePage<NewStartPage> {
         helper.sleep();
         backButton.click();
         wait.until(ExpectedConditions.visibilityOf(backButton));
+        helper.sleep();
         backButton.click();
 
         return this;

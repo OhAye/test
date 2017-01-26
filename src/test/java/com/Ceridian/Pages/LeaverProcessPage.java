@@ -19,7 +19,7 @@ public class LeaverProcessPage extends BasePage<LeaverProcessPage> {
     @FindBy(xpath = "/html/body/form/div[3]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td[1]")
     WebElement firstEmployee;
 
-    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[1]/span[@class='ui-button-text']")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
     WebElement employeeLeaverSelectButton;
 
     @FindBy(id = "LeaveDate_txtInput")

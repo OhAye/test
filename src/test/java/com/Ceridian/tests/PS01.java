@@ -19,7 +19,7 @@ public class PS01 extends BaseTest {
         String[] excelArray = excelUtils.readLoginInformation();
         homePage
                 .openPage(excelArray[2])
-                .logIn("1000483", "password9!");
+                .logIn(excelArray[0], excelArray[1]);
 
         Navigation navigation = PageFactory.newInstance(Navigation.class);
 
