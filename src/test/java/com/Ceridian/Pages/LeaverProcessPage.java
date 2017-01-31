@@ -31,6 +31,12 @@ public class LeaverProcessPage extends BasePage<LeaverProcessPage> {
     @FindBy(id = "StandardFooterToolbar_StandardFooterToolbarSubmit")
     WebElement processLeaverSubmitButton;
 
+    @FindBy(id = "Status_btnDynamicButton")
+    WebElement reasonForLeavingLookUp;
+
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/button[3]/span[@class='ui-button-text']")
+    private WebElement leaverSelectButton;
+
     Helper helper = new Helper();
 
     public LeaverProcessPage processLeaver(String leaveDate, String reasonForLeaving) {
@@ -44,8 +50,10 @@ public class LeaverProcessPage extends BasePage<LeaverProcessPage> {
         wait.until(ExpectedConditions.visibilityOf(leaveDateInput));
         leaveDateInput.sendKeys(leaveDate);
 
-        Select selectLeaveReason = new Select(leavingReasonSelect);
-        selectLeaveReason.selectByVisibleText(reasonForLeaving);
+        reasonForLeavingLookUp.click();
+//        Select selectLeaveReason = new Select(leavingReasonSelect);
+//        selectLeaveReason.selectByVisibleText(reasonForLeaving);
+        leaverSelectButton.click();
 
         processLeaverSubmitButton.click();
 

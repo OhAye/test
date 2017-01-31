@@ -396,8 +396,6 @@ public class NewStartPage extends BasePage<NewStartPage> {
         helper.switchToMainFrame();
         companyWorkPatternSelectButton.click();
 
-
-
         return this;
 
     }
