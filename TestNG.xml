@@ -9,6 +9,7 @@
         <class name="com.Ceridian.tests.HB01"/>
         <class name="com.Ceridian.tests.NH01"/>
         <class name="com.Ceridian.tests.CD01"/>
+        <class name="com.Ceridian.tests.PL01"/>
     </classes>
     </test>
 </suite>
