@@ -22,7 +22,6 @@ public class HB01 extends BaseTest {
         String[] excelArray = excelUtils.readLoginInformation();
         homePage
 
-//                .logIn("fulladmin", "Brexit?1$")
                 .openPage(excelArray[2])
                 .logIn(excelArray[0], excelArray[1]);
 
@@ -37,7 +36,7 @@ public class HB01 extends BaseTest {
 
     }
 
-    //@Test(dependsOnMethods = "CD01", alwaysRun = true, description = "Accept Holiday Booking")
+//    @Test(dependsOnMethods = "CD01", alwaysRun = true, description = "Accept Holiday Booking")
 
     public void CD02() {
 

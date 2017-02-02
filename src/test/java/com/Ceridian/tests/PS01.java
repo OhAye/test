@@ -24,8 +24,8 @@ public class PS01 extends BaseTest {
         Navigation navigation = PageFactory.newInstance(Navigation.class);
 
         navigation
-                .clickMyPayslips()
-                .checkMyPayslips();
+                .clickMyPayslips();
+//                .checkMyPayslips();
 
 
     }
